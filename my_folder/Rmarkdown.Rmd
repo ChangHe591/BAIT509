@@ -1,0 +1,13 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+*Learn [**_Machine Learning_**](https://github.com/ChangHe591/BAIT509/tree/master/my_folder)
+
+** First Exercise
+```{r}
+2+2
+```
+
