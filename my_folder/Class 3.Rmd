@@ -1,0 +1,83 @@
+---
+title: "Class 3"
+output: html_document
+---
+
+
+```{r}
+library(tidyverse)
+library(knitr)
+library(ggplot2)
+set.seed(87)
+dat <- tibble(x = c(rnorm(100), rnorm(100)+5)-3,
+              y = sin(x^2/5)/x + rnorm(200)/10 + exp(1))
+kable(head(dat))
+
+plot(y~x, data=dat)
+```
+y is around 2.7 when x is 0
+```{r}
+dat
+```
+
+```{r}
+dat$xvalue<-rep(0,nrow(dat))
+dat$d<-abs(dat$x-dat$xvalue)
+dat1<-arrange(dat,d)
+k<-dat1[1:10,]
+yhat<-mean(k$y)
+yhat
+```
+Loess
+```{r}
+loess<-filter(dat,d<1)
+loess
+yhat_loess <- mean(loess$y)
+yhat_loess
+```
+
+3.no observation
+```{r}
+loess2<-filter(dat,d<.01)
+```
+4.
+r or k is small, we might overfitting the data
+high amount of variance
+bias:systematic errors, will be small in this case
+
+if we choose a very large value
+all the data and average, is not gonna reflect the y value we are looking for
+variance is gonna be small
+however, bias will be high
+
+```{r}
+library(tidyverse)
+xgrid <- seq(-5, 4, length.out=1000)
+kNN_estimates <- map_dbl(xgrid, function(x){
+  
+        dat$d<-abs(dat$x-x)
+        dat1<-arrange(dat,d)
+        k<-dat1[1:5,]
+        mean(k$y)
+        #return(yhat)
+})
+loess_estimates <- map_dbl(xgrid, function(x){
+        dat$d<-abs(dat$x-x)
+        arrange(dat,d)           
+        loess<-filter(dat,d<1)
+          
+        yhat_loess <- mean(loess$y)
+        return(yhat_loess)
+})
+est <- tibble(x=xgrid, kNN=kNN_estimates, loess=loess_estimates) %>% 
+    gather(key="method", value="estimate", kNN, loess)
+ggplot() +
+    geom_point(data=dat, mapping=aes(x,y)) +
+    geom_line(data=est, 
+              mapping=aes(x,estimate, group=method, colour=method)) +
+    theme_bw()
+```
+knn is overfitting k=5 d
+dig
+
+
