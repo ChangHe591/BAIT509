@@ -12,11 +12,11 @@ Suppose you have the following paired data of (x,y): (1,2), (1,5), (2,0). Which 
 3.	(1,2), (1,2), (1,5)
 
 1 is not because (1,0) is not an observation out the data set
-2 and 3
+2 is not valid because there are only two pairs.
+3 Yes
 
 "	For each of the above valid bootstapped data sets, which observations are out-of-bag (OOB)?
 
-For 2, (1,5) is out of bag error
 For 3, (2,0) is out of bag error
 
 You make a random forest consisting of four trees. You obtain a new observation of predictors, and would like to predict the response. What would your prediction be in the following cases?
