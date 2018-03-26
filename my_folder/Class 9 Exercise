@@ -7,16 +7,16 @@ A new observation will be classified as A.
 2
 
 3.	Which observations receive a penalty? Which observations are the support vectors?
-Observation 7, 6, 8, 9
-Support vectors: 7, 6, 8, 9
+Observation 7, 6, 8, 9,10
+Support vectors: 7, 6, 8, 9,10
 
 4.	What is the total penalty here?
 0.25+0.25+1.75+1.25+2.25=5.75
 
 5.	Can I choose a bigger margin if my total allowable penalty is 6?
-No.
+Yes
 
 6.	Are the data separable? If so, what are the support vectors?
-Yes. 8 and 9
+Yes. 4,8 and 9
 
 
