@@ -11,7 +11,7 @@ Observation 7, 6, 8, 9
 Support vectors: 7, 6, 8, 9
 
 4.	What is the total penalty here?
-0.25+0.25+1.875+1.25+2.25=5.875
+0.25+0.25+1.75+1.25+2.25=5.75
 
 5.	Can I choose a bigger margin if my total allowable penalty is 6?
 No.
