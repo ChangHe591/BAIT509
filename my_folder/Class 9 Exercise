@@ -1,0 +1,22 @@
+1.	Construct the decision rule according to this classification boundary. How would you classify a new observation that has x1=6x1=6 and x2=10x2=10?
+To the left of the line x1=7.5, the points will be classified as A
+To the right of the line x1=7.5, the points will be classified as B
+A new observation will be classified as A.
+
+2.	What size is the margin here?
+2
+
+3.	Which observations receive a penalty? Which observations are the support vectors?
+Observation 7, 6, 8, 9
+Support vectors: 7, 6, 8, 9
+
+4.	What is the total penalty here?
+0.25+0.25+1.875+1.25+2.25=5.875
+
+5.	Can I choose a bigger margin if my total allowable penalty is 6?
+No.
+
+6.	Are the data separable? If so, what are the support vectors?
+Yes. 8 and 9
+
+
